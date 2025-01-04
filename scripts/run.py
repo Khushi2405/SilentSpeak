@@ -23,7 +23,8 @@ print("All connections established")
 def collect_data(count=20):
     i = 1
     while i <= count :
-        with open('C:/Users/Khush/Desktop/Masters_Academics/First_Semester/Mobile_Assignments/JawSense/khushi_data/{}.csv'.format(i), 'w', newline='') as file:
+        # add full address of the data folder
+        with open('C:/Users/....../data/{}.csv'.format(i), 'w', newline='') as file:
             csv_writer = csv.writer(file)
             csv_writer.writerow(["Accel_X", "Accel_Y", "Accel_Z", "Gyro_X", "Gyro_Y", "Gyro_Z"])  # Write header
             # Start recording
@@ -43,7 +44,8 @@ def collect_data(count=20):
                         csv_writer.writerow(values)  # Write to file
         
         ser.close()
-        features = combine_data('C:/Users/Khush/Desktop/Masters_Academics/First_Semester/Mobile_Assignments/JawSense/khushi_data/{}.csv'.format(i))
+        # add full address of the same data folder
+        features = combine_data('C:/Users/....../data/{}.csv'.format(i))
         gesture = predict_word(features)
         print("Gesture performed is", gesture)
         perform_gesture(gesture)
@@ -57,15 +59,11 @@ def extract_features(df):
         # Time-domain features
         features[f"{col}_mean"] = df[col].mean()
         features[f'{col}_std'] = df[col].std()
-        # features[f"{col}_min"] = df[col].min()
-        # features[f"{col}_max"] = df[col].max()
         features[f"{col}_median"] = df[col].median()
     accel_mag = np.sqrt(df['Accel_X']**2 + df['Accel_Y']**2 + df['Accel_Z']**2)
     
     # Syllable Count Estimation
     features['syllable_count'] = estimate_syllables(accel_mag)
-
-    # print(features['syllable_count'])
     return features
 
 
@@ -97,9 +95,9 @@ def combine_data(filepath):
 
 def predict_word(input_row):
     # # Load the trained model
-    model = joblib.load('../khushi_final_models/word.pkl')
+    model = joblib.load('../models/word_prediction_model.pkl')
     # Load the classes 
-    classes = np.load('../khushi_final_models/label_encoder.npy', allow_pickle=True)
+    classes = np.load('../models/gesture_feature_columns.npy', allow_pickle=True)
 
     input_row_array = np.array([list(input_row.values())])
     

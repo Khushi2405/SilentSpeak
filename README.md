@@ -1,7 +1,20 @@
 # SilentSpeak - IMU-Based Speech Command Classification Using Jaw Motion
 
+
 ### **Overview**  
 This project introduces a **motion-based alternative** for speech command recognition by leveraging **Inertial Measurement Unit (IMU)** sensors to analyze jaw movements during speech. By capturing **accelerometer** and **gyroscope** data from an IMU sensor placed on the lower jaw, the system accurately classifies spoken commands without relying on audio. This approach ensures a **noise-resilient**, **privacy-conscious**, and **inclusive** solution for real-time speech command recognition.
+
+---
+
+### **Project Report**  
+To find the project report click:  
+https://docs.google.com/document/d/1vLwOhwVL9Af6kikUltheWme07E2eAEAzWyzDgtBfKgU/edit?usp=drive_link
+
+---
+
+### **Real-Time Demo**  
+Watch the end-to-end demonstration of the project here:  
+https://drive.google.com/file/d/1g4QbBxXHoueTJju_Ub60Bt_T03qUPyH6/view?usp=share_link
 
 ---
 
@@ -162,17 +175,6 @@ Enter `idf.py -p PORT flash monitor` to build, flash and monitor the project.
 
 See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for full steps to configure and use ESP-IDF to build projects.
 
-### **Project Report**  
-To find the project report click:  
-https://docs.google.com/document/d/1vLwOhwVL9Af6kikUltheWme07E2eAEAzWyzDgtBfKgU/edit?usp=drive_link
-
----
-
-### **Real-Time Demo**  
-Watch the end-to-end demonstration of the project here:  
-https://drive.google.com/file/d/1g4QbBxXHoueTJju_Ub60Bt_T03qUPyH6/view?usp=share_link
-
----
 
 ### **Future Scope**  
 - Integrating the system into wearable devices for hands-free control.  
